@@ -75,8 +75,17 @@ export default function Home() {
   }
 
   useEffect(() => {
-    updateInventory()
-  }, [])
+    if (typeof window !== 'undefined') {
+      isSupported().then((supported) => {
+        if (supported) {
+          getAnalytics(app);
+        }
+      }).catch((error) => {
+        console.error('Error checking analytics support', error);
+      });
+    }
+  }, []);
+  
 
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)

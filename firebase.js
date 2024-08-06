@@ -20,20 +20,16 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const firestore = getFirestore(app);
 
 if (typeof window !== 'undefined') {
   isSupported().then((supported) => {
     if (supported) {
-      const analytics = getAnalytics(app);
+      getAnalytics(app);
     }
   }).catch((error) => {
     console.error('Error checking analytics support', error);
   });
 }
 
-const analytics = getAnalytics(app);
-const firestore = getFirestore(app);
-
-
-
-export {firestore}
+export { firestore, app };
