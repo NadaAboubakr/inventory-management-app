@@ -25,9 +25,9 @@ if (typeof window !== 'undefined') {
   isSupported().then((supported) => {
     if (supported) {
       const analytics = getAnalytics(app);
-    } else {
-      console.log('Firebase Analytics is not supported in this environment.');
     }
+  }).catch((error) => {
+    console.error('Error checking analytics support', error);
   });
 }
 
