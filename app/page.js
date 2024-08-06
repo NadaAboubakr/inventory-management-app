@@ -161,8 +161,4 @@ export default function Home() {
       </Stack>
     </Box>
   </Box>
-<<<<<<< HEAD
 )}
-=======
-)}
->>>>>>> 03602ad6f5e6bfe519c6753f8fe9e4d99282b20f
